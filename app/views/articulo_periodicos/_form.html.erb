@@ -1,0 +1,63 @@
+<div class="wrapper">
+	<%= form_for(@articulo_periodico) do |f| %>
+	  <% if @articulo_periodico.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@articulo_periodico.errors.count, "error") %> evitaron que se guardara la referencia:</h2>
+
+		  <ul>
+		  <% @articulo_periodico.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
+
+		<div class="left">
+		  <div class="field">
+			<%= f.label :apellido, "Apellido del autor" %><br />
+			<%= f.text_field :apellido %>
+			<div id="articulo_periodico_apellido_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :nombre, "Nombre del autor" %><br />
+			<%= f.text_field :nombre %>
+			<div id="articulo_periodico_nombre_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :fecha, "Fecha" %><br />
+			<%= f.date_select :fecha %>
+		  </div>
+		  <div class="field">
+			<%= f.label :titulo_articulo, "Título del artículo" %><br />
+			<%= f.text_field :titulo_articulo %>
+			<div id="articulo_periodico_titulo_articulo_errors"></div>
+		  </div>
+		</div>
+		
+		
+		<div class="right">
+		  <div class="field">
+			<%= f.label :titulo_periodico, "Título del periodico" %><br />
+			<%= f.text_field :titulo_periodico %>
+			<div id="articulo_periodico_titulo_periodico_errors"></div>
+		  </div>
+		  <div class="field">
+		  	<%= check_box_tag "check", 1, false; %>
+		  	<%= label_tag "¿Es referencia electrónica?" %>
+		  </div>
+		  <div class="field">
+			<%= f.label :pagina, "Número de página" %><br />
+			<%= f.text_field :pagina %>
+			<div id="articulo_periodico_pagina_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :url, "Url" %><br />
+			<%= f.text_field :url, :disabled=>"disabled" %>
+			<div id="articulo_periodico_url_errors"></div>
+		  </div>
+		  <div class="actions">
+			<%= f.submit "Guardar" %> | <%= link_to 'Volver', articulo_periodicos_path, :class => "option_link" %>
+		  </div>
+		 </div>
+	<% end %>
+</div>

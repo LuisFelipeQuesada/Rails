@@ -1,0 +1,5 @@
+<h1>Agregar referencia de libros</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Volver', libros_path, :class => "option_link" %>

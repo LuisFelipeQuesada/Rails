@@ -1,0 +1,2 @@
+module ArticuloRevistaHelper
+end

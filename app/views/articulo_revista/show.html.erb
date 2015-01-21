@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%= @articulo_revistum.apellido %>,
+
+<%= @articulo_revistum.nombre.first %>.
+
+(<%= @articulo_revistum.anio %>).
+
+<%= @articulo_revistum.titulo_articulo %>.
+
+<span class="italic"><%= @articulo_revistum.titulo_revista %></span>,
+
+<span class="italic">
+	<%= @articulo_revistum.volumen %>
+</span>
+
+<% if @articulo_revistum.numero != nil %>
+	(<%= @articulo_revistum.numero %>),
+<% end %>
+
+<% if @articulo_revistum.pagina != nil %>
+	p. <%= @articulo_revistum.pagina %>
+<% end %>
+
+<% if @articulo_revistum.url == nil %>
+<% else %>
+	Recuperado de: <%= @articulo_revistum.url %>
+<% end %>
+</p>
+
+
+<%= link_to 'Editar Referencia', edit_articulo_revistum_path(@articulo_revistum), :class => "option_link" %> |
+<%= link_to 'Volver', articulo_revista_path, :class => "option_link" %>

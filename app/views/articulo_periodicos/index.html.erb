@@ -1,0 +1,28 @@
+<div class="main">
+	<h1>Referencias de Artículos de Periodicos</h1>
+
+	<%= link_to 'Nueva Referencia', new_articulo_periodico_path, :class => "option_link" %> | <%= link_to 'Descargar todas las referencias en PDF', downloadP_path(:format => 'pdf'), :class => "option_link" %>
+	<br />
+	<br />
+	<table class="table">
+	  <tr class="header">
+		<th>Nombre del Autor</th>
+		<th>Titulo del articulo</th>
+		<th>Titulo del periodico</th>
+		<th colspan=4>Opciones</th>
+	  </tr>
+
+	<% @articulo_periodicos.each do |articulo_periodico| %>
+	  <tr class="row">
+		<td><%= articulo_periodico.apellido %> <%= articulo_periodico.nombre %></td>
+		<td><%= articulo_periodico.titulo_articulo %></td>
+		<td><%= articulo_periodico.titulo_periodico %></td>
+		<td><%= link_to 'Ver referencia', articulo_periodico, :class => "option_link" %></td>
+		<td><%= link_to 'Descargar en PDF', articulo_periodico_path(articulo_periodico, :format => 'pdf'), :class => "option_link" %></td>
+		<td><%= link_to 'Editar referencia', edit_articulo_periodico_path(articulo_periodico), :class => "option_link" %></td>
+		<td><%= link_to 'Eliminar referencia', articulo_periodico, :class => "option_link", method: :delete, data: { confirm: '¿Está seguro que desea eliminar esta referencia?' } %></td>
+		</td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

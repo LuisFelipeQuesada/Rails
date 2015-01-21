@@ -1,0 +1,8 @@
+class RenameTitulo < ActiveRecord::Migration
+  def up
+  	rename_column :libro, :titulo, :titulo_cap
+  end
+
+  def down
+  end
+end

@@ -1,0 +1,22 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<% @periodico.each do |articulo_periodico| %>
+<p>
+	<%= articulo_periodico.apellido %>,
+
+	<%= articulo_periodico.nombre.first %>.
+
+	(<%= articulo_periodico.fecha %>).
+
+	<%= articulo_periodico.titulo_articulo %>.
+
+	<span class="italic"><%= articulo_periodico.titulo_periodico %></span>,
+
+	<% if articulo_periodico.pagina != nil %>
+		p. <%= articulo_periodico.pagina %>
+	<% end %>
+
+	<% if articulo_periodico.url != nil %>
+		Recuperado de: <%= articulo_periodico.url %>
+	<% end %>
+</p>
+<% end >

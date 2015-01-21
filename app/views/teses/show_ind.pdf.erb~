@@ -1,0 +1,10 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<p>
+	<%= tese.apellido %>
+	<%= tese.nombre %>
+	<%= tese.anio %>
+	<%= tese.titulo %>
+	<%= tese.institucion %>
+	<%= tese.localizacion %>
+</p>
+

@@ -1,0 +1,29 @@
+<div class="main">
+	<h1>Referencias de Artículo de Revista</h1>
+
+	<%= link_to 'Nueva Referencia', new_articulo_revistum_path, :class => "option_link" %> | <%= link_to 'Descargar todas las referencias en PDF', downloadR_path(:format => 'pdf'), :class => "option_link" %>
+	<br />
+	<br />
+	<table class="table">
+	  <tr class="header">
+		<th>Nombre del Autor</th>
+		<th>Titulo del artículo</th>
+		<th>Titulo de la revista</th>
+		<th colspan=4>Opciones</th>
+	  </tr>
+
+	<% @articulo_revista.each do |articulo_revistum| %>
+	  <tr class="row">
+		<td><%= articulo_revistum.apellido %> <%= articulo_revistum.nombre %></td>
+		<td><%= articulo_revistum.titulo_articulo %></td>
+		<td><%= articulo_revistum.titulo_revista %></td>
+		<td><%= link_to 'Mostrar referencia', articulo_revistum, :class => "option_link" %></td>
+		<td><%= link_to 'Descargar en PDF', articulo_revistum_path(articulo_revistum, :format => 'pdf'), :class => "option_link" %></td>
+		<td><%= link_to 'Editar referencias', edit_articulo_revistum_path(articulo_revistum), :class => "option_link" %></td>
+		<td><%= link_to 'Eliminar referencia', articulo_revistum, :class => "option_link", method: :delete, data: { confirm: '¿Está seguro que desea eliminar la referencia?' } %></td>
+		</td>
+	  </tr>
+	<% end %>
+	</table>
+</div>	
+

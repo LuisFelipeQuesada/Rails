@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+<p>
+<%= @tese.apellido %>
+<%= @tese.nombre %>
+<%= @tese.anio %>
+<%= @tese.titulo %>
+<%= @tese.institucion %>
+<%= @tese.localizacion %>
+</p>
+
+
+<%= link_to 'Editar referencia', edit_tese_path(@tese), :class => "option_link" %> |
+<%= link_to 'Volver', teses_path, :class => "option_link" %>

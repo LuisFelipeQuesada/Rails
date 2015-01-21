@@ -1,0 +1,27 @@
+<div class="main">
+	<h1>Referencias de Tesis</h1>
+
+	<%= link_to 'Nueva Referencia', new_tese_path, :class => "option_link" %> | <%= link_to 'Descargar todas las referencias en PDF', downloadT_path(:format => 'pdf'), :class => "option_link" %>
+	<br />
+	<br />
+	<table class="table">
+	  <tr class="header">
+		<th>Nombre del Autor</th>
+		<th>Título</th>
+		<th>Institución</th>
+		<th colspan=4>Opciones</th>
+	  </tr>
+
+	<% @teses.each do |tese| %>
+	  <tr class="row">
+		<td><%= tese.apellido %> <%= tese.nombre %></td>
+		<td><%= tese.titulo %></td>
+		<td><%= tese.institucion %></td>
+		<td><%= link_to 'Mostrar referencia', tese, :class => "option_link" %></td>
+		<td><%= link_to 'Descargar en PDF', tese_path(tese, :format => 'pdf'), :class => "option_link" %></td>
+		<td><%= link_to 'Editar referencia', edit_tese_path(tese), :class => "option_link" %></td>
+		<td><%= link_to 'Eliminar referencia', tese, :class => "option_link", method: :delete, data: { confirm: '¿Está seguro que desea eliminar esta referencia?'} %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>

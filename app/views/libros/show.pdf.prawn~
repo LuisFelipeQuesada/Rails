@@ -1,0 +1,7 @@
+require 'prawn'
+pdf.text "Referencias de ##{current_user.name}"
+
+@current_user.libro.each do |ref|
+	pdf.text ref.name
+end
+

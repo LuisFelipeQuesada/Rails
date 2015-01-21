@@ -1,0 +1,64 @@
+// Place all the styles related to the Libros controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+	padding-left:10%;
+}
+
+div {
+	&.main {
+		margin: 0 auto;
+		padding: {
+			top:3%;
+			left:5%;
+		}
+		width:900px;
+		table, td, tr, th {
+			border: {
+				style:dotted;
+				width:1px;
+				color:#000000;
+			}
+		}
+		.header {
+			background-color:#4682B4;
+			color:white;
+			font: {
+				weight:bold;
+			}
+			padding: {
+				top:3px;
+				bottom:3px;
+				left:5px;
+				right:5px;
+			}
+		}
+		.row {
+			border: {
+				color:#000000;
+			}
+			td {
+				padding: {
+					top:3px;
+					bottom:3px;
+					left:5px;
+					right:5px;
+				}
+			}
+		}
+	}
+	&.wrapper {
+		margin: 0 auto;
+		width:700px;
+		position:relative;
+		.left {
+			float:left;
+		}
+		.right {
+			float:right;
+		}
+	}
+}
+
+

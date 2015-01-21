@@ -1,0 +1,53 @@
+// Place all the styles related to the ArticuloPeriodicos controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div {
+	&.main {
+		margin: 0 auto;
+		width:900px;
+		table, td, tr, th {
+			border: {
+				style:dotted;
+				width:1px;
+				color:#000000;
+			}
+		}
+		.header {
+			background-color:#4682B4;
+			color:white;
+			font: {
+				weight:bold;
+			}
+			//padding: {
+			//	top:3px;
+			//	bottom:3px;
+			//	left:2px;
+			//	right:2px;
+			//}
+		}
+		.row {
+			border: {
+				color:#000000;
+			}
+			td {
+				//padding: {
+				//	top:3px;
+				//	bottom:3px;
+				//	left:2px;
+				//	right:2px;
+				//}
+			}
+		}
+	}
+	&.wrapper {
+		margin: 0 auto;
+		width:700px;
+		.left {
+			float:left;
+		}
+		.right {
+			float:right;
+		}
+	}
+}

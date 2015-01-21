@@ -1,0 +1,21 @@
+<div id="login">
+<h1>Iniciar sesión en el sistema</h1>
+<%= form_tag sessions_path do %>
+  		<div id="row1">
+			<div class="col1"><%= label_tag 'email', 'Correo Electrónico'%></div>
+			<div class="col2">
+				<%= text_field_tag :email, params[:email], :placeholder=>"Digíte su correo electrónico" %>
+				<div id="mail_errors"></div>
+			</div>
+		</div>
+		<div id="row2">
+			<div class="col1"><%= label_tag :password %></div>
+			<div class="col2">
+				<%= password_field_tag :pass_hash %>
+				<div id="pass_errors"></div>
+			</div>
+		</div>
+		<div id="button"><%= submit_tag "Iniciar sesión" %></div>
+<% end %>
+</div>
+

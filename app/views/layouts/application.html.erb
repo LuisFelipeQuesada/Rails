@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ApaRef</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="wrapper">
+	<div id="user_nav">
+		<% if current_user %>
+			<div id="info_user">
+				<p id="user_info">
+			   		Usuario: <%= current_user.email %>
+					<%= link_to "Cerrar Sesión", log_out_path, :class => "option_link" %>
+				</p>
+			</div>
+			<div id="menu">
+			   <ul id="menu_items">
+					<!--li> <% link_to "Inicio", libros_path %></li-->
+					<li> <%= link_to "Libros", libros_path %></li>
+					<li> <%= link_to "Artículos de Revista", articulo_revista_path %></li>
+					<li> <%= link_to "Artículos de Periodicos", articulo_periodicos_path %></li>
+					<li> <%= link_to "Tesis", teses_path %></li>
+			   </ul>
+			</div>
+		<% else %>
+			<div id="register">
+				<%= link_to "Registrarse en el sistema", register_path, :class => "register_link" %>
+			</div>
+		<% end %>
+	</div>
+	<div class="content">
+		<% flash.each do |name, msg| %>
+		<!--%=  content_tag :div, msg, :id => "flash_#{name}" %-->
+		<% end %>
+		<%= yield %>
+	</div>
+</div>
+
+
+</body>
+</html>

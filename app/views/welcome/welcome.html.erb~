@@ -1,0 +1,10 @@
+<hmtl>
+	<head>
+	</head>
+	<body>
+		<div id="welcome">
+			<h1>"Bienvenido, esta aplicación le permite crear referencias bibliográficas en formato APA"</h1>
+		</div>
+	</body>
+</html>
+

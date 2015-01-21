@@ -1,0 +1,72 @@
+<div class="wrapper">
+<%= form_for(@articulo_revistum) do |f| %>
+  <% if @articulo_revistum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@articulo_revistum.errors.count, "error") %> evitaron que se guardara la referencia:</h2>
+
+      <ul>
+      <% @articulo_revistum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	 <div class="left">
+		  <div class="field">
+			<%= f.label :apellido, "Apellidos del autor" %><br />
+			<%= f.text_field :apellido %>
+			<div id="articulo_revistum_apellido_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :nombre, "Nombre del Autor" %><br />
+			<%= f.text_field :nombre %>
+			<div id="articulo_revistum_nombre_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :anio, "Año" %><br />
+			<%= f.text_field :anio %>
+			<div id="articulo_revistum_anio_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :titulo_articulo, "Título del Artículo" %><br />
+			<%= f.text_field :titulo_articulo %>
+			<div id="articulo_revistum_titulo_articulo_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :titulo_revista, "Título de la revista" %><br />
+			<%= f.text_field :titulo_revista %>
+			<div id="articulo_revistum_titulo_revista_errors"></div>
+		  </div>
+	</div>
+	<div class="right">
+		  <div class="field">
+			<%= f.label :volumen, "Volúmen" %><br />
+			<%= f.text_field :volumen %>
+			<div id="articulo_revistum_volumen_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :numero, "Número" %><br />
+			<%= f.text_field :numero %>
+			<div id="articulo_revistum_numero_errors"></div>
+		  </div>
+		  <div class="field">
+			<%= f.label :pagina, "Página" %><br />
+			<%= f.text_field :pagina %>
+			<div id="articulo_revistum_pagina_errors"></div>
+		  </div>
+		  <div class="field">
+		  	<%= check_box_tag "check", 1, false; %>
+		  	<%= label_tag "¿Es referencia electrónica?" %>
+		  </div>
+		  <div class="field">
+			<%= f.label :url, "Url" %><br />
+			<%= f.text_field :url, :disabled =>"disabled" %>
+			<div id="articulo_revistum_url_errors"></div>
+		  </div>
+		  <div class="actions">
+			<%= f.submit "Guardar" %> | <%= link_to 'Volver', articulo_revista_path, :class => "option_link" %>
+		  </div>
+	</div>
+</div>
+<% end %>

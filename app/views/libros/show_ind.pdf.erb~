@@ -1,0 +1,31 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<p>
+	<%= @libro.apellido %>,
+
+	<%= @libro.nombre.first %>.
+
+	<% if @libro.anio != nil %>
+		(<%= @libro.anio %>)
+	<% else %>
+		(s.f.)
+	<% end %>
+
+	<% if @libro.titulo_capitulo != nil %>
+		<%= @libro.titulo_capitulo %>
+	<% else %>
+	<% end %>
+
+	<span class="italic"><%= @libro.titulo_libro %></span>
+
+	Lugar de Publicación: <%= @libro.lugar_publicacion %>
+ 
+	<% if @libro.lugar_publicacion != nil %>
+		Lugar de publicación: <%= @libro.lugar_publicacion %> 
+	<% end %>
+
+	<% if @libro.url == nil %>
+	<% else %>
+		Recuperado de: <%= @libro.url%>
+	<% end %>
+</p>
+

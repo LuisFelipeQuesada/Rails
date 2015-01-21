@@ -1,0 +1,9 @@
+Bienvenido <%= @user.name %> al sistema que le permite crear y almacenar sus referencias en formato APA
+=======================================================================================================
+
+Se ha registrado en el sistema con el siguiente nombre de usuario <%= @user.name %>
+
+Para ingresar al sistema haga click en la siguiente direccón web <%= @url %>.
+
+
+

@@ -1,0 +1,77 @@
+<div class="wrapper">
+	<%= form_for(@libro) do |f| %>
+	  <% if @libro.errors.any? %>
+		<div id="error_explanation">
+		  <h2><%= pluralize(@libro.errors.count, "error") %> evitaron que se guardara la referencia:</h2>
+
+		  <ul>
+		  <% @libro.errors.full_messages.each do |msg| %>
+		    <li><%= msg %></li>
+		  <% end %>
+		  </ul>
+		</div>
+	  <% end %>
+	  
+	<div class="left">
+	  <div class="field">
+		<%= f.label :apellido, "Apellido del Autor" %><br />
+		<%= f.text_field :apellido %>
+		<div id="apellido_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :nombre, "Nombre del Autor" %><br />
+		<%= f.text_field :nombre %>
+		<div id="name_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= check_box_tag "check_cap", "1", false %>
+		<%= f.label :titulo_capitulo, "Titulo del Capítulo o Sección" %><br />
+		<%= f.text_field :titulo_capitulo, :disabled=>"disable" %>
+		<div id="titulo_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :titulo_libro, "Titulo del Libro" %><br />
+		<%= f.text_field :titulo_libro %>
+		<div id="titulo_libro_errors"></div>
+	  </div>
+	</div>
+	
+	<div class="right">  
+	  <div class="field">
+		<%= f.label :anio, "Año" %><br />
+		<%= f.text_field :anio %>
+		<div id="anio_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= check_box_tag "check_url", "1", false %>
+		<%= f.label :url, "¿Es referencia electrónica?" %><br />
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :lugar_publicacion, "Lugar de la Publicación" %><br />
+		<%= f.text_field :lugar_publicacion %>
+		<div id="lugar_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :casa_publicacion, "Editorial" %><br />
+		<%= f.text_field :casa_publicacion %>
+		<div id="casa_errors"></div>
+	  </div>
+	  
+	  <div class="field">
+		<%= f.label :url, "Url" %><br />
+		<%= f.text_field :url %>
+		<div id="url_errors"></div>
+	  </div>
+	  <div class="actions">
+	  	<%= f.submit "Guardar" %> | <%= link_to 'Volver', libros_path, :class => "option_link" %>
+	  </div>
+	</div>
+	<% end %>
+</div>
+

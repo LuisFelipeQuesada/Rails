@@ -1,0 +1,6 @@
+<h1>Editar referencia</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Mostrar referencia', @articulo_periodico, :class => "option_link" %> |
+<%= link_to 'Volver', articulo_periodicos_path, :class => "option_link" %>

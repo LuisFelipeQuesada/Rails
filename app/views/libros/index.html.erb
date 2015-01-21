@@ -1,0 +1,29 @@
+<div class="main">
+	<h1>Referencias de libros</h1>
+	
+	<%= link_to 'Nueva Referencia', new_libro_path, :class => "option_link"  %> | <%= link_to 'Descargar todas las referencias en PDF', downloadL_path(:format => 'pdf'), :class => "option_link" %>
+	<!-- <%= link_to 'Descargar todas las referencias en PDF', libro_path(@libros, :format => 'pdf') %> -->
+	<br />
+	<br />
+	<table class="table">
+	  <tr class="header">
+		<th>Autor</th>
+		<th>Libro</th>
+		<th>Casa Publicadora</th>
+		<th colspan=4>Opciones</th>
+	  </tr>
+
+	<% @libros.each do |libro| %>
+	  <tr class="row">
+		<td><%= libro.apellido %> <%= libro.nombre %></td>
+		<td><%= libro.titulo_libro %></td>
+		<td><%= libro.casa_publicacion %></td>
+		<td><%= link_to 'Ver referencia', libro, :class => "option_link"  %></td>
+		<td><%= link_to 'Descargar en PDF', libro_path(libro, :format => 'pdf'), :class => "option_link" %></td>
+		<td><%= link_to 'Editar referencia', edit_libro_path(libro), :class => "option_link" %></td>
+		<td><%= link_to 'Eliminar Referencia', libro, :class => "option_link",method: :delete, data: { confirm: 'Está seguro(a que desea eliminar esta referencia)?' } %></td>
+	  </tr>
+	<% end %>
+	</table>
+</div>
+

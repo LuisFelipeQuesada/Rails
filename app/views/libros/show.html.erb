@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+<p>
+	<%= @libro.apellido %>,
+
+	<%= @libro.nombre.first %>.
+
+	<% if @libro.anio != nil %>
+		(<%= @libro.anio %>).
+	<% else %>
+		(s.f.)
+	<% end %>
+
+	<% if @libro.anio != nil %>
+		<%= @libro.titulo_capitulo %>.
+	<% else %>
+	<% end %>
+
+	<span class="italic"><%= @libro.titulo_libro %></span>
+
+	<% if @libro.lugar_publicacion != nil %>
+		Lugar de publicación: <%= @libro.lugar_publicacion %> 
+	<% end %>
+
+	<% if @libro.casa_publicacion != nil %>
+		<%= @libro.casa_publicacion %>.
+	<% end %>
+
+	<% if @libro.url == nil %>
+	<% else %>
+		Recuperado de: <%= @libro.url%>
+	<% end %>
+</p>
+
+<%= link_to 'Editar referencia', edit_libro_path(@libro), :class => "option_link" %> |
+<%= link_to 'Volver', libros_path, :class => "option_link" %>
+

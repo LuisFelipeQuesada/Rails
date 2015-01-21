@@ -1,0 +1,152 @@
+body {
+  background-color: #eeeeee;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  margin: 0 auto;
+  height:90%;
+}
+
+h1 {
+	padding-left:1%;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #fff;
+  text-decoration:none;
+  padding: {
+	  left:2px;
+	  right:2px;
+  }
+  &:visited {
+    color: #fff;
+  }
+  &:hover {
+    color: #770000;
+    background-color: #fff;
+  }
+  &.register_link {
+  	color: #ff0000;
+  	float:right;
+  	margin-right:20px;
+  	font: {
+  		family:Verdana;
+  		size: 14px;
+  		weight: bold;
+  	}
+  	&.register_link:hover {
+  		color:#000;
+  		background-color: #F0F0F0;
+  	}
+  }
+  &.option_link {
+  	color:#000;
+  	&.option_link:hover {
+  		color:#770000;
+  		background-color: #eeeeee;
+  	}
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+  #user_nav {
+  		width:90%;
+  		#info_user {
+			float:right;
+			position:relative;
+			#user_info {
+				float:right;
+			}
+		}
+		#menu {
+		  	background-color: #770000;
+			position:relative;
+			margin: 0 auto;
+			width:500px;
+			#menu_items {
+				li {
+					text-decoration:none;
+					display:inline;
+					background-color:#770000;
+					padding: {
+						left:2px;
+						right:2px;
+					}
+					font: {
+						size:15px;
+					}
+				}
+			}
+		}
+		#menu, #info_user {
+			display:block;
+		}
+		#register {
+			margin-bottom:8%;
+		}
+	}
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+div {
+	#pass_errors, #mail_errors, #name_errors, #apellido_errors, #titulo_errors, #titulo_libro_errors, #articulo_revistum_apellido_errors, #articulo_revistum_nombre_errors, #articulo_revistum_titulo_articulo_errors, #articulo_revistum_titulo_revista_errors, #articulo_periodico_apellido_errors, #articulo_periodico_nombre_errors, #articulo_periodico_titulo_articulo_errors, #articulo_periodico_titulo_periodico_errors, #tesis_nombre_errors, #tesis_apellido_errors, #tesis_titulo_errors, #tesis_insti_errors, #anio_errors, #lugar_errors, #casa_errors, #articulo_periodico_pagina_errors, #articulo_revistum_anio_errors, #articulo_revistum_volumen_errors, #articulo_revistum_numero_errors, #articulo_revistum_pagina_errors, #tesis_localizacion_errors, #tesis_anio_errors, #articulo_revistum_url_errors, #articulo_periodico_url_errors
+	{
+		color:#CC0000;
+		padding: 2px;
+	}
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+span {
+	&.italic{
+		font: {
+			style:italic;
+		}
+	}
+}
+

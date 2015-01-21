@@ -1,0 +1,30 @@
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<p>
+	<%= @articulo_revistum.apellido %>,
+
+	<%= @articulo_revistum.nombre.first %>.
+
+	(<%= @articulo_revistum.anio %>).
+
+	<%= @articulo_revistum.titulo_articulo %>
+
+	<span class="italic"><%= @articulo_revistum.titulo_revista %></span>,
+
+	<span class="italic">
+		<%= @articulo_revistum.volumen %>
+	</span>
+
+	<% if @articulo_revistum.numero != nil %>
+		(<%= @articulo_revistum.numero %>),
+	<% else %>
+		,
+	<% end %>
+
+	<% if @articulo_revistum.pagina != nil %>
+		p. <%= @articulo_revistum.pagina %>
+	<% end %>
+
+	<% if @articulo_revistum.url != nil %>
+		Recuperado de: <%= @articulo_revistum.url %>
+	<% end %>
+</p>
