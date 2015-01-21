@@ -1,4 +1,3 @@
-rails
-=====
+Tecnología: Ruby Rails.
 
-rails
+Objetivo del proyecto: Elaborar una aplicación web que permita la gestión de referencias en formato APA.
